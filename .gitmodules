@@ -4,12 +4,9 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/taglist.vim"]
-	path = vim/bundle/taglist.vim
-	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "vim/bundle/vdebug"]
 	path = vim/bundle/vdebug
 	url = https://github.com/joonty/vdebug.git
-[submodule "vim/bundle/vim-surround"]
+[submodule "vim/bundle/surround"]
 	path = vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
