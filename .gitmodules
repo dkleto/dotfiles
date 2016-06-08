@@ -9,7 +9,7 @@
 	url = git://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/taglist"]
 	path = vim/bundle/taglist
-	url = git@github.com:vim-scripts/taglist.vim.git
+	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = git@github.com:tpope/vim-repeat.git
