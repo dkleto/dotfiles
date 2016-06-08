@@ -10,6 +10,11 @@
 :set autoindent
 :set smartindent
 
+"Use 2 space indenting for ruby files.
+au FileType ruby setl sw=2 sts=2 et
+au FileType html setl sw=2 sts=2 et
+set nocompatible
+
 "Highlight searches, unhighlight with space
 :set hlsearch
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
@@ -57,10 +62,6 @@ let Tlist_Close_On_Select = 1
 if has("autocmd") && expand('%:t') != 'COMMIT_EDITMSG'
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
-"Use 2 space indenting for ruby files.
-au FileType ruby setl sw=2 sts=2 et
-set nocompatible
 
 :filetype plugin on
 
