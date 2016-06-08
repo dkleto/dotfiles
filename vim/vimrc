@@ -46,7 +46,6 @@ let g:vdebug_options['path_maps'] = {
 \}
 
 "Enable filetype plugins, and remap the phpfolding update command to F7
-:filetype plugin on
 map <F7> <Esc>:EnableFastPHPFolds<Cr>
 
 :set guioptions -=m
@@ -61,3 +60,11 @@ endif
 
 "Use 2 space indenting for ruby files.
 au FileType ruby setl sw=2 sts=2 et
+set nocompatible
+
+:filetype plugin on
+
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
