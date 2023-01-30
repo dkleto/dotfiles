@@ -14,9 +14,6 @@ set_from_resource $bg i3wm.15 #dfddd5
 
 default_border pixel 2
 
-# Get rid of title bar and borders
-#new_window 1pixel
-
 # Font for window titles. Will also be used by the baa unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 font pango:monoSpace 13
@@ -208,7 +205,7 @@ set_from_resource $fg i3wm.7 #7a7a7a
 set_from_resource $bg i3wm.15 #dfddd5
 
 # class                 border  backgr. text indicator child_border
-client.focused          $fg     $bg     $bg  $fg       $fg
+client.focused          $fg     $bg     $fg  $fg       $fg
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
 client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
