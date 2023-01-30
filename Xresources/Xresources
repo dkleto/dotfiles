@@ -1,0 +1,18 @@
+#include "/home/adam/dotfiles/xrdb/Xres/PaperColour.fork"
+#include "/home/adam/dotfiles/xrdb/rofi/PaperColour.fork"
+
+URxvt*termName: rxvt
+URxvt*scrollBar_right: true
+URxvt*scrollBar: true
+URxvt*scrollstyle: plain
+URxvt*scrollColor: #aaaaaa
+URxvt*thickness: 7
+URxvt*borderLess: false
+URxvt*cursorBlink: true
+urxvt*font:             xft:Monospace:size=11
+urxvt*boldFont:             xft:Monospace:size=11
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.internalBorder: 10
