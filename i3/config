@@ -1,0 +1,229 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+set $home /home/adam
+
+# Colors 2017-06-15 - current
+# class                 border  backgr. text    indicator
+client.focused          #5f676a #5f676a #ffffff #E2E2E1
+client.focused_inactive #091219 #091219 #c2c2b0 #484e50
+client.unfocused        #091219 #091219 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
+
+# Get rid of title bar and borders
+new_window 1pixel
+
+# Font for window titles. Will also be used by the baa unless a different font
+# is used in the bar {} block below. ISO 10646 = Unicode
+font pango:Ubuntu Mono 13
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+#bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec gnome-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+r exec dmenu_run
+
+# Hue light controls - white colours
+bindsym $mod+F7 exec lights set --off
+bindsym $mod+F8 exec lights set --on -t 153
+bindsym $mod+F9 exec lights set --on -t 240
+bindsym $mod+F10 exec lights set --on -t 327
+bindsym $mod+F11 exec lights set --on -t 414
+bindsym $mod+F12 exec lights set --on -t 500
+
+# Hue light controls - vivid colours
+bindsym $mod+Shift+F8 exec lights set --on -c red
+bindsym $mod+Shift+F9 exec lights set --on -c blue
+bindsym $mod+Shift+F10 exec lights set --on -c purple
+bindsym $mod+Shift+F11 exec lights set --on -c yellow
+bindsym $mod+Shift+F12 exec lights set --on -c green
+
+# Hue light controls - brightness
+bindsym $mod+Control+F8 exec lights set --on -b 0
+bindsym $mod+Control+F9 exec lights set --on -b 64
+bindsym $mod+Control+F10 exec lights set --on -b 128
+bindsym $mod+Control+F11 exec lights set --on -b 192
+bindsym $mod+Control+F12 exec lights set --on -b 255
+
+# Shutdown/lock/suspend
+bindsym $mod+Shift+Return exec gnome-screensaver-command -l
+bindsym $mod+Shift+Escape exec maturin-shutdown
+
+# Rhythmbox shortcuts
+bindsym $mod+F1 exec rhythmbox-client --no-start --play-pause
+bindsym $mod+F2 exec rhythmbox-client --no-start --previous
+bindsym $mod+F3 exec rhythmbox-client --no-start --next
+
+# ALSA shortcuts
+bindsym $mod+F4 exec adam-mute
+bindsym $mod+F5 exec amixer set Master 2-
+bindsym $mod+F6 exec amixer set Master 2+
+
+# Free beer counter-measures
+bindsym $mod+e exec email_unlock
+# For thunderbird startup
+#for_window [class="Thunderbird"] exec email_lock
+# For message compose window only
+for_window [instance="Msgcompose" class="Thunderbird"] exec email_lock
+
+# Move container to opposite monitor
+bindsym $mod+Shift+o move container to output left
+# Move workspace to opposite monitor
+bindsym $mod+Shift+p move workspace to output left
+
+# Move focus to opposite monitor
+bindsym $mod+o focus output left
+
+## Home (no laptop display)
+workspace 1 output HDMI-1
+workspace 2 output HDMI-1
+workspace 3 output HDMI-1
+workspace 4 output HDMI-1
+workspace 5 output HDMI-1
+workspace 6 output HDMI-1
+workspace 7 output HDMI-1
+workspace 8 output HDMI-1
+workspace 9 output HDMI-1
+workspace 10 output HDMI-1
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+n split h
+
+# split in vertical orientation
+bindsym $mod+m split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+y layout stacking
+bindsym $mod+u layout tabbed
+bindsym $mod+i layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+semicolon mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    colors {
+        statusline  #a6a8af
+        #statusline #76c2d6
+        background  #222222
+
+            # class                border         backgrd     text
+            focused_workspace      #222222      #222222     #bf3f34
+            active_workspace       #222222      #222222     #a6a8af
+            inactive_workspace     #222222      #222222     #a6a8af
+            urgent_workspace       #222222      #222222     #c7a551
+    }
+
+    status_command i3status
+}
+
+exec --no-startup-id xmodmap -e "keycode 135 = Super_R"
+exec --no-startup-id feh --bg-fill --randomize $home/Desktop/*
+exec --no-startup-id gnome-screensaver-command -l
+exec --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
+exec urxvtd
+exec --no-startup-id $home/hacky-scripts/sshagentsetup
+exec --no-startup-id xmodmap -e "clear Mod4"
+# Using sleep to make sure xmodmap works is a nasty hack but it seems to work...
+exec --no-startup-id sleep 3; xmodmap -e "add Mod4 = Super_L Print"
+## Start Dropbox daemon:
+exec --no-startup-id daemon $home/.dropbox-dist/dropboxd
+exec --no-startup-id gnome-screensaver
