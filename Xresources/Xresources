@@ -5,8 +5,8 @@ URxvt*termName: rxvt
 URxvt*scrollBar_right: true
 URxvt*scrollBar: true
 URxvt*scrollstyle: plain
-URxvt*scrollColor: #aaaaaa
-URxvt*thickness: 7
+URxvt*scrollColor: #4d4d4c
+URxvt*thickness: 10
 URxvt*borderLess: false
 URxvt*cursorBlink: true
 urxvt*font:             xft:Monospace:size=11
