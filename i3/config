@@ -12,7 +12,7 @@ set $home /home/adam
 set_from_resource $fg i3wm.7 #7a7a7a
 set_from_resource $bg i3wm.15 #dfddd5
 
-default_border pixel 2
+default_border pixel 3
 
 # Font for window titles. Will also be used by the baa unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -27,7 +27,7 @@ bindsym $mod+Return exec urxvtc
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+r exec rofi -show run
 
 # Hue light controls - white colours
