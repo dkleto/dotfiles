@@ -3,4 +3,4 @@ configuration {
   combi-modes: [ window, drun, run ];
 }
 
-@theme "Paper" 
+@theme "PaperColour"
